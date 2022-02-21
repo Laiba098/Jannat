@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
-            android:name=".FIrstPage"
+            android:name=".CompanyHomePage"
             android:exported="true"
             android:theme="@style/DemoTheme">
             <intent-filter>
@@ -20,11 +20,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateAccount"
+            android:name=".FIrstPage"
             android:exported="false"
             android:theme="@style/DemoTheme">
 
         </activity>
+        <activity
+            android:name=".CreateAccount"
+            android:exported="false"
+            android:theme="@style/DemoTheme"></activity>
         <activity
             android:name=".SignInPage"
             android:exported="false"
@@ -32,7 +36,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/DemoTheme"></activity>
+            android:theme="@style/DemoTheme" />
     </application>
 
 </manifest>
