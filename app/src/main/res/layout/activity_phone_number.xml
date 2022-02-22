@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneNumber"
+    android:orientation="vertical"
+    android:background="@color/grey"
+    android:layout_gravity="center">
+    <ImageView
+        android:layout_height="150dp"
+        android:layout_width="170dp"
+        android:src="@drawable/phone"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue with this Phone Number"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        />
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:id="@+id/phoneBox"
+        android:inputType="phone"
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:layout_gravity="center"
+        android:id="@+id/continueBtn"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_back"
+       />
+
+
+</LinearLayout>
