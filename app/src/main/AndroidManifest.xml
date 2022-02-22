@@ -16,13 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
-            android:name=".PlaceReviews"
+            android:name=".GivePlaceReview"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".PlaceReviews"
+            android:exported="false">
+
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -39,12 +44,10 @@
         <activity
             android:name=".MapsActivity"
             android:exported="false"
-            android:label="@string/title_activity_maps">
-
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
         <activity
             android:name=".CompanyInformation"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".UserHomePage"
             android:exported="false" />

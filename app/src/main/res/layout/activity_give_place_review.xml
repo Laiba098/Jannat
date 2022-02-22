@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--the root view must be the DrawerLayout-->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GivePlaceReview"
+    android:background="@color/white"
+    tools:ignore="HardcodedText">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/boundary"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give Your Review Please"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:textSize="23dp"
+                android:id="@+id/cat"
+                android:layout_marginTop="3dp"
+                />
+
+
+            <EditText
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter Place Here"
+                android:layout_gravity="center"
+                android:id="@+id/place"
+                android:background="@drawable/login_edit"
+                android:inputType="text"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+
+                />
+            <EditText
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:hint="Enter Your Review Here"
+                android:layout_gravity="center"
+                android:id="@+id/review"
+                android:background="@drawable/login_edit"
+                android:inputType="text"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                />
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Post Review"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btn"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_back"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+
+
+
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--this the navigation view which draws
+        and shows the navigation drawer-->
+    <!--include the menu created in the menu folder-->
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
