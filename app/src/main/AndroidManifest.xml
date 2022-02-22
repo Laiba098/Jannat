@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
-            android:name=".GivePlaceReview"
+            android:name=".GiveCompanyReview"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PlaceReviews"
+            android:name=".CompanyReviews"
+            android:exported="false" />
+        <activity
+            android:name=".GivePlaceReview"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".PlaceReviews"
+            android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -44,7 +50,7 @@
         <activity
             android:name=".MapsActivity"
             android:exported="false"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".CompanyInformation"
             android:exported="false" />
