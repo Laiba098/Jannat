@@ -16,25 +16,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
-            android:name=".PhoneNumber"
+            android:name=".SetupProfile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
-            android:name=".GiveCompanyReview"
+            android:name=".OTP"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".PhoneNumber"
+            android:exported="false"></activity>
+        <activity
+            android:name=".GiveCompanyReview"
+            android:exported="false" />
         <activity
             android:name=".CompanyReviews"
             android:exported="false" />
         <activity
             android:name=".GivePlaceReview"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".PlaceReviews"
             android:exported="false" />
