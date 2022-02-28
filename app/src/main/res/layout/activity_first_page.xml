@@ -59,6 +59,7 @@
             android:textStyle="bold"
             app:layout_editor_absoluteX="176dp"
             tools:layout_editor_absoluteX="20dp"
+            android:onClick="Login"
 
 
             />
@@ -67,7 +68,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Service Provider"
-            android:id="@+id/mechanic"
+            android:id="@+id/serviceprovider"
             android:layout_marginTop="40dp"
             android:background="@drawable/btn_back"
             android:gravity="center"
@@ -77,6 +78,7 @@
             android:textStyle="bold"
             app:layout_editor_absoluteX="176dp"
             tools:layout_editor_absoluteX="20dp"
+            android:onClick="Login"
 
 
 
