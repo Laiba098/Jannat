@@ -140,7 +140,7 @@ public class CreateAccount extends AppCompatActivity {
 
                     long newRowId = db.insert(DatabaseContract.ServiceSeeker.TABLE_NAME, null, values);
                     if (newRowId > 0) {
-                        //  Toast.makeText(this, "Sign In", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CreateAccount.this, "Account Successfully Created", Toast.LENGTH_SHORT).show();
                     }
                     db.close();
                     name.setText(null);
@@ -196,7 +196,7 @@ public class CreateAccount extends AppCompatActivity {
 
                     long newRowId = db.insert(DatabaseContract.ServiceProvider.TABLE_NAME, null, values);
                     if (newRowId > 0) {
-                        //  Toast.makeText(this, "Sign In", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CreateAccount.this, "Account Successfully Created", Toast.LENGTH_SHORT).show();
                     }
                     db.close();
                     name.setText(null);
@@ -205,7 +205,6 @@ public class CreateAccount extends AppCompatActivity {
                     contact.setText(null);
                     password.setText(null);
                     Intent intent = new Intent(CreateAccount.this, SignInPage.class);
-                    // intent.putExtra("val1", Email);
                     intent.putExtra("check", check);
                     startActivity(intent);
 
