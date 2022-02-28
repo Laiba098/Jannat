@@ -14,7 +14,7 @@ public class DatabaseContract {
         public static final String COL_PASSWORD="Password";
     }
     public static abstract class ServiceProvider implements BaseColumns {
-        public static final String TABLE_NAME = "Mechanic";
+        public static final String TABLE_NAME = "ServiceProvider";
         public static final String COL_ID = "ID";
         public static final String COL_NAME = "Name";
         public static final String COL_CONTACT="Contact";
