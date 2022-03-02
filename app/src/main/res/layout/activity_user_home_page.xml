@@ -34,7 +34,8 @@
             android:background="@color/white"
             android:hint="Search By Place"
             android:padding="10dp"
-            android:textColorHint="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <ImageButton
             android:id="@+id/search"

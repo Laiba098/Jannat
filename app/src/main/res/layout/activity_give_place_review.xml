@@ -50,14 +50,15 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Place Here"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/place"
                 android:background="@drawable/login_edit"
-                android:inputType="text"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
                 android:textColorHint="@color/grey"
                 android:textColor="@color/white"
                 android:layout_marginTop="40dp"
+                android:inputType="textMultiLine"
 
                 />
             <EditText
@@ -68,12 +69,12 @@
                 android:layout_gravity="center"
                 android:id="@+id/review"
                 android:background="@drawable/login_edit"
-                android:inputType="text"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
                 android:textColorHint="@color/grey"
                 android:textColor="@color/white"
                 android:layout_marginTop="10dp"
+                android:inputType="textMultiLine"
                 />
 
 
