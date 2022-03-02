@@ -24,13 +24,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + DatabaseContract.ServiceProvider.COL_LOCATION + " TEXT,"
             + DatabaseContract.ServiceProvider.COL_EMAIL + " TEXT,"
             + DatabaseContract.ServiceProvider.COL_PASSWORD+ " TEXT )";
+
+    private static final String CREATE_TBL_TOURPLANS = "CREATE TABLE "
+            + DatabaseContract.TourPlans.TABLE_NAME + " ("
+            + DatabaseContract.TourPlans.COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + DatabaseContract.TourPlans.COL_COMPANYNAME + " TEXT NOT NULL, "
+            + DatabaseContract.TourPlans.COL_VEHICLENAME + " TEXT,"
+            + DatabaseContract.TourPlans.COL_NUMOFSEATS + " TEXT,"
+            + DatabaseContract.TourPlans.COL_PLACE + " TEXT,"
+            + DatabaseContract.TourPlans.COL_VEHICLERENT + " TEXT,"
+            + DatabaseContract.TourPlans.COL_ROOMRENT + " TEXT,"
+            + DatabaseContract.TourPlans.COL_DRIVERRENT + " TEXT,"
+            + DatabaseContract.TourPlans.COL_FOODRENT+ " TEXT )";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TBL_SERVICEPROVIDER);
         db.execSQL(CREATE_TBL_SERVICESEEKER);
-
+        db.execSQL(CREATE_TBL_TOURPLANS);
     }
 
     @Override
