@@ -7,22 +7,22 @@
     android:background="@color/purple_200"
     tools:context=".CompanyReviews"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt"
-        android:text="Reviews"
-        android:textSize="32dp"
+        android:text="Company Reviews"
+        android:textColorHint="@color/white"
         android:textColor="@color/black"
-        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="40dp"
         android:layout_marginTop="20dp"
-        >
+        android:textStyle="bold"
+        android:gravity="center"
 
-    </TextView>
+
+        />
 
     <ListView
         android:layout_marginLeft="20dp"
