@@ -10,14 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
+            android:name=".lists1"
+            android:exported="false" />
+        <activity
+            android:name=".lists"
+            android:exported="false" />
+        <activity
             android:name=".MyOrders"
             android:exported="false" />
         <activity
             android:name=".SetupProfile"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".OTP"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".PhoneNumber"
             android:exported="false" />
