@@ -18,5 +18,12 @@
         android:id="@+id/checkreview"
         android:title="Check Reviews"
         />
-
+    <item
+        android:id="@+id/giveplacereview"
+        android:title="Give Place Reviews"
+        />
+    <item
+        android:id="@+id/givecompreview"
+        android:title="Give Company Review"
+        />
 </menu>

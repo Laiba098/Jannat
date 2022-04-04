@@ -6,8 +6,5 @@
         android:title="Check Place Reviews"
 
         />
-    <item
-        android:id="@+id/giveplacereviews"
-        android:title="Give Place Reviews"
-        />
+
 </menu>

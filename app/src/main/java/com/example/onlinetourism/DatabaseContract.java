@@ -37,6 +37,4 @@ public class DatabaseContract {
         public static final String COL_FOODRENT="FoodRent";
 
     }
-
-
 }

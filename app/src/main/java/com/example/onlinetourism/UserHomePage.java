@@ -140,6 +140,21 @@ public class UserHomePage extends AppCompatActivity {
             List2 customList = new List2(activity, arrayList);
             lv.setAdapter(customList);
 
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    String compname = arrayList.get(position).getName();
+                    String vehiclename  = arrayList.get(position).getVehicle();
+                    String placename = arrayList.get(position).getPlace();
+                    Intent intent = new Intent(UserHomePage.this, CompanyInformation.class);
+                    intent.putExtra("compname", compname);
+                    intent.putExtra("vehiclename", vehiclename);
+                    intent.putExtra("placename", placename);
+                    startActivity(intent);
+                   // Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
+                }
+            });
+
 
         }
         else {
@@ -165,10 +180,6 @@ public class UserHomePage extends AppCompatActivity {
             case R.id.checkplacereviews:
                 Intent in = new Intent(getApplicationContext(), PlaceReviews.class);
                 startActivity(in);break;
-
-            case R.id.giveplacereviews:
-                Intent in1 = new Intent(getApplicationContext(), GivePlaceReview.class);
-                startActivity(in1);break;
 
 
             default:
