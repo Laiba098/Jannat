@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 public class CompanyHomePage extends AppCompatActivity {
 EditText companyname, vehiclename, numofseats, place,vehiclerent, roomrent, driverrent, foodrent;
 String companyname1, vehiclename1, numofseats1, place1,vehiclerent1, roomrent1, driverrent1, foodrent1;
+    boolean opt;
 Button btn;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -53,31 +55,57 @@ Button btn;
                 {
                     Toast.makeText(CompanyHomePage.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }
+                String[] column = {"CompanyName"};
 
-                ContentValues values = new ContentValues();
-                values.put(DatabaseContract.TourPlans.COL_COMPANYNAME, companyname1);
-                values.put(DatabaseContract.TourPlans.COL_VEHICLENAME, vehiclename1);
-                values.put(DatabaseContract.TourPlans.COL_NUMOFSEATS, numofseats1);
-                values.put(DatabaseContract.TourPlans.COL_PLACE, place1);
-                values.put(DatabaseContract.TourPlans.COL_VEHICLERENT, vehiclerent1);
-                values.put(DatabaseContract.TourPlans.COL_ROOMRENT, roomrent1);
-                values.put(DatabaseContract.TourPlans.COL_DRIVERRENT, driverrent1);
-                values.put(DatabaseContract.TourPlans.COL_FOODRENT, foodrent1);
+                Cursor cursor = db.query("TourPlans", column, null, null, null, null, null);
+                if(cursor !=null)
+                {
+                    while(cursor.moveToNext())
+                    {
+                        String s1;
+                        s1=cursor.getString(0);
+                        if(s1.equals(companyname1))
+                        {
+                            opt=true;
+                        }
 
+                    }
 
-                long newRowId = db.insert(DatabaseContract.TourPlans.TABLE_NAME, null, values);
-                if (newRowId > 0) {
-                    Toast.makeText(CompanyHomePage.this, "Tour Details has been Shared Successfully", Toast.LENGTH_SHORT).show();
                 }
-                db.close();
-                companyname.setText(null);
-                vehiclerent.setText(null);
-                vehiclename.setText(null);
-                numofseats.setText(null);
-                place.setText(null);
-                roomrent.setText(null);
-                driverrent.setText(null);
-                foodrent.setText(null);
+                if(opt)
+                {
+                    Toast.makeText(CompanyHomePage.this,"This Company Name already Exist",Toast.LENGTH_SHORT).show();
+                    companyname.setText(null);
+                    opt=false;
+                }
+                else{
+                    ContentValues values = new ContentValues();
+                    values.put(DatabaseContract.TourPlans.COL_COMPANYNAME, companyname1);
+                    values.put(DatabaseContract.TourPlans.COL_VEHICLENAME, vehiclename1);
+                    values.put(DatabaseContract.TourPlans.COL_NUMOFSEATS, numofseats1);
+                    values.put(DatabaseContract.TourPlans.COL_PLACE, place1);
+                    values.put(DatabaseContract.TourPlans.COL_VEHICLERENT, vehiclerent1);
+                    values.put(DatabaseContract.TourPlans.COL_ROOMRENT, roomrent1);
+                    values.put(DatabaseContract.TourPlans.COL_DRIVERRENT, driverrent1);
+                    values.put(DatabaseContract.TourPlans.COL_FOODRENT, foodrent1);
+
+
+                    long newRowId = db.insert(DatabaseContract.TourPlans.TABLE_NAME, null, values);
+                    if (newRowId > 0) {
+                        Toast.makeText(CompanyHomePage.this, "Tour Details has been Shared Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                    db.close();
+                    companyname.setText(null);
+                    vehiclerent.setText(null);
+                    vehiclename.setText(null);
+                    numofseats.setText(null);
+                    place.setText(null);
+                    roomrent.setText(null);
+                    driverrent.setText(null);
+                    foodrent.setText(null);
+                }
+
+
 
 
 
