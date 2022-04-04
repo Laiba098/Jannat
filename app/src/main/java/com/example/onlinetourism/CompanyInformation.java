@@ -40,6 +40,27 @@ public class CompanyInformation extends AppCompatActivity {
         vehicle.setText(vehiclename1);
         place.setText(placename1);
 
+        String[] columns = { "NumOfSeats", "VehicleRent","RoomRent","DriverRent","FoodRent"};
+        Cursor cursor = db.query("TourPlans", columns, "CompanyName=?", new String[]{compname1}, null, null, null);
+
+
+        while (cursor.moveToNext()) {
+            String noofseats1 = cursor.getString(0);
+            String vehiclerent1 = cursor.getString(1);
+            String roomrent1 = cursor.getString(2);
+            String driverrent1 = cursor.getString(3);
+            String foodrent1 = cursor.getString(4);
+            numberofseats.setText(noofseats1);
+            vehiclerent.setText(vehiclerent1);
+            roomrent.setText(roomrent1);
+            driverrent.setText(driverrent1);
+            foorrent.setText(foodrent1);
+
+           int totalrent1= Integer.parseInt(vehiclerent1)+ Integer.parseInt(roomrent1)+Integer.parseInt(driverrent1)+Integer.parseInt(foodrent1);
+            String s=String.valueOf(totalrent1);
+            totalrent.setText(s);
+        }
+
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {

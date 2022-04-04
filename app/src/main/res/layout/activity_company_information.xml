@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/companyname"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_centerHorizontal="true"
@@ -74,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/vehicle"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_centerHorizontal="true"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:id="@+id/numberofseats"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
@@ -116,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:id="@+id/place"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
@@ -207,7 +207,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:id="@+id/foodrent"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
@@ -229,7 +229,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:id="@+id/totalrent"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
