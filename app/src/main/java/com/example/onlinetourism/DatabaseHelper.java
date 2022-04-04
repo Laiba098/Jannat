@@ -28,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TBL_TOURPLANS = "CREATE TABLE "
             + DatabaseContract.TourPlans.TABLE_NAME + " ("
             + DatabaseContract.TourPlans.COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + DatabaseContract.TourPlans.COL_COMPANYID + " TEXT NOT NULL, "
             + DatabaseContract.TourPlans.COL_COMPANYNAME + " TEXT NOT NULL, "
             + DatabaseContract.TourPlans.COL_VEHICLENAME + " TEXT,"
             + DatabaseContract.TourPlans.COL_NUMOFSEATS + " TEXT,"

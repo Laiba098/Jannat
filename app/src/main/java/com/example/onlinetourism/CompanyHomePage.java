@@ -23,10 +23,13 @@ String companyname1, vehiclename1, numofseats1, place1,vehiclerent1, roomrent1, 
 Button btn;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+    String pid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_home_page);
+        Bundle bn = getIntent().getExtras();
+        pid = bn.getString("pId");
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
         companyname=findViewById(R.id.companyname);
@@ -80,6 +83,7 @@ Button btn;
                 }
                 else{
                     ContentValues values = new ContentValues();
+                    values.put(DatabaseContract.TourPlans.COL_COMPANYID, pid);
                     values.put(DatabaseContract.TourPlans.COL_COMPANYNAME, companyname1);
                     values.put(DatabaseContract.TourPlans.COL_VEHICLENAME, vehiclename1);
                     values.put(DatabaseContract.TourPlans.COL_NUMOFSEATS, numofseats1);

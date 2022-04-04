@@ -55,7 +55,8 @@ public class SignInPage extends AppCompatActivity {
 
     public void login(View view)
     {
-
+        String[] values = {name.getText().toString(), password.getText().toString()};
+        String[] columns = { "ID","Name", "Password"};
         db=dbHelper.getReadableDatabase();
         if(name.equals("") || password.equals(""))
         {
@@ -65,8 +66,6 @@ public class SignInPage extends AppCompatActivity {
         {
 
 
-            String[] values = {name.getText().toString(), password.getText().toString()};
-            String[] columns = { "ID","Email", "Password","Name","Contact"};
             name.setText(null);
             password.setText(null);
 
@@ -80,13 +79,9 @@ public class SignInPage extends AppCompatActivity {
                         do{
 
                             id=  cursor.getString(0);
-                            String name=cursor.getString(3);
-                            String contact=cursor.getString(4);
                             Intent intent = new Intent(SignInPage.this, UserHomePage.class);
                             intent.putExtra("check",check);
                             intent.putExtra("pId", id);
-                            intent.putExtra("name", name);
-                            intent.putExtra("contact", contact);
 
                             startActivity(intent);
                         }  while (cursor.moveToNext());
@@ -108,14 +103,10 @@ public class SignInPage extends AppCompatActivity {
                         do{
 
                             id=  cursor.getString(0);
-                            String name=cursor.getString(3);
-                            String contact=cursor.getString(4);
                             ContentValues args = new ContentValues();
                             Intent intent = new Intent(SignInPage.this, CompanyHomePage.class);
                             intent.putExtra("check",check);
                             intent.putExtra("pId", id);
-                            intent.putExtra("name", name);
-                            intent.putExtra("contact", contact);
                             startActivity(intent);
                         }  while (cursor.moveToNext());
 

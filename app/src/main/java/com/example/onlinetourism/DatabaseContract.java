@@ -27,6 +27,7 @@ public class DatabaseContract {
     public static abstract class TourPlans implements BaseColumns {
         public static final String TABLE_NAME = "TourPlans";
         public static final String COL_ID = "ID";
+        public static final String COL_COMPANYID = "CompanyId";
         public static final String COL_COMPANYNAME = "CompanyName";
         public static final String COL_VEHICLENAME="VehicleName";
         public static final String COL_NUMOFSEATS="NumOfSeats";
