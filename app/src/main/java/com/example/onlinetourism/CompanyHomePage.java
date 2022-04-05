@@ -98,7 +98,7 @@ Button btn;
                     if (newRowId > 0) {
                         Toast.makeText(CompanyHomePage.this, "Tour Details has been Shared Successfully", Toast.LENGTH_SHORT).show();
                     }
-                    db.close();
+                   // db.close();
                     companyname.setText(null);
                     vehiclerent.setText(null);
                     vehiclename.setText(null);

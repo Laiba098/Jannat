@@ -36,6 +36,20 @@ public class DatabaseContract {
         public static final String COL_ROOMRENT="RoomRent";
         public static final String COL_DRIVERRENT="DriverRent";
         public static final String COL_FOODRENT="FoodRent";
-
     }
+    public static abstract class Bookings implements BaseColumns {
+        public static final String TABLE_NAME = "Bookings";
+        public static final String COL_ID = "ID";
+        public static final String COL_COMPANYID = "CompanyId";
+        public static final String COL_SERVICESEEEKERID = "ServiceseekerId";
+        public static final String COL_COMPANYNAME = "CompanyName";
+        public static final String COL_VEHICLENAME="VehicleName";
+        public static final String COL_NUMOFSEATS="NumOfSeats";
+        public static final String COL_PLACE = "Place";
+        public static final String COL_VEHICLERENT="VehicleRent";
+        public static final String COL_ROOMRENT="RoomRent";
+        public static final String COL_DRIVERRENT="DriverRent";
+        public static final String COL_FOODRENT="FoodRent";
+    }
+
 }

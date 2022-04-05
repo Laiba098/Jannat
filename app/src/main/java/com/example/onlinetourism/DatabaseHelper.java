@@ -38,6 +38,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + DatabaseContract.TourPlans.COL_DRIVERRENT + " TEXT,"
             + DatabaseContract.TourPlans.COL_FOODRENT+ " TEXT )";
 
+    private static final String CREATE_TBL_BOOKINGS = "CREATE TABLE "
+            + DatabaseContract.Bookings.TABLE_NAME + " ("
+            + DatabaseContract.Bookings.COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + DatabaseContract.Bookings.COL_COMPANYID + " TEXT NOT NULL, "
+            + DatabaseContract.Bookings. COL_SERVICESEEEKERID + " TEXT NOT NULL, "
+            + DatabaseContract.Bookings.COL_COMPANYNAME + " TEXT NOT NULL, "
+            + DatabaseContract.Bookings.COL_VEHICLENAME + " TEXT,"
+            + DatabaseContract.Bookings.COL_NUMOFSEATS + " TEXT,"
+            + DatabaseContract.Bookings.COL_PLACE + " TEXT,"
+            + DatabaseContract.Bookings.COL_VEHICLERENT + " TEXT,"
+            + DatabaseContract.Bookings.COL_ROOMRENT + " TEXT,"
+            + DatabaseContract.Bookings.COL_DRIVERRENT + " TEXT,"
+            + DatabaseContract.Bookings.COL_FOODRENT+ " TEXT )";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -45,6 +59,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TBL_SERVICEPROVIDER);
         db.execSQL(CREATE_TBL_SERVICESEEKER);
         db.execSQL(CREATE_TBL_TOURPLANS);
+        db.execSQL(CREATE_TBL_BOOKINGS);
+
     }
 
     @Override
