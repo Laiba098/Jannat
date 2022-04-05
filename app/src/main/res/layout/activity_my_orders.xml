@@ -26,17 +26,18 @@
 
             />
 
-            <GridView
-                android:id="@+id/gridView1"
-                android:background="@drawable/boundary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:columnWidth="90dp"
-                android:numColumns="3"
-                android:stretchMode="columnWidth"
-                android:horizontalSpacing="@dimen/cardview_compat_inset_shadow"
-                android:verticalSpacing="@dimen/cardview_compat_inset_shadow"
+            <ListView
+                android:layout_gravity="center"
+                android:layout_width="330dp"
+                android:layout_height="450dp"
+                android:divider="@color/white"
+                android:dividerHeight="2dp"
+                android:id="@+id/listview1"
+                android:layout_marginBottom="350dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+
                 />
 
 

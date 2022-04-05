@@ -133,6 +133,7 @@ Button btn;
         switch (item.getItemId()) {
             case R.id.checkorders:
                 Intent in = new Intent(getApplicationContext(), MyOrders.class);
+                in.putExtra("serviceproviderid",pid);
                 startActivity(in);break;
 
             case R.id.myreviews:

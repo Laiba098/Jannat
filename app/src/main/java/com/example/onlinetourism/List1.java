@@ -7,6 +7,24 @@ public class List1 {
     String place;
     String id;
 
+    public String getServiceseekerid() {
+        return serviceseekerid;
+    }
+
+    public void setServiceseekerid(String serviceseekerid) {
+        this.serviceseekerid = serviceseekerid;
+    }
+
+    public String getServiceproviderid() {
+        return serviceproviderid;
+    }
+
+    public void setServiceproviderid(String serviceproviderid) {
+        this.serviceproviderid = serviceproviderid;
+    }
+
+    String serviceseekerid, serviceproviderid;
+
 
 
     public List1(String name, String vehicle, String place, String id) {
@@ -20,6 +38,10 @@ public class List1 {
         this.name = name;
         this.vehicle = vehicle;
         this.place=place;
+
+    }
+    public List1(String serviceseekerid) {
+        this.serviceseekerid = serviceseekerid;
 
     }
     public String getName() {

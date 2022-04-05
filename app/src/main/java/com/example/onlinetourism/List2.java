@@ -51,7 +51,7 @@ public class List2 extends BaseAdapter {
         vh.textViewCountry.setText(customer.get(position).getName());
         vh.textViewCapital.setText(customer.get(position).getPlace());
         vh.tv.setText(customer.get(position).getName());
-        Log.d("Tag",customer.get(position).getPlace());
+       // Log.d("Tag",customer.get(position).getPlace());
         return  row;
     }
 
