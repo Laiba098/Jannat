@@ -18,7 +18,7 @@ public class CompanyInformation extends AppCompatActivity {
     TextView compname,vehicle,numberofseats,place,vehiclerent,roomrent,driverrent,foorrent, totalrent;
     DatabaseHelper dbh;
     SQLiteDatabase db;
-    String companyid,contactnumb;
+    String companyid,serviceseekerid,contactnumb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,9 @@ public class CompanyInformation extends AppCompatActivity {
         compname1 =intent.getStringExtra("compname");
         placename1 =intent.getStringExtra("placename");
         vehiclename1 =intent.getStringExtra("vehiclename");
+        serviceseekerid=intent.getStringExtra("Serviceseekerid");
+       // Toast.makeText(CompanyInformation.this, "id is" +serviceseekerid, Toast.LENGTH_SHORT).show();
+
         compname=findViewById(R.id.companyname);
         vehicle=findViewById(R.id.vehicle);
         numberofseats=findViewById(R.id.numberofseats);
@@ -39,6 +42,7 @@ public class CompanyInformation extends AppCompatActivity {
         driverrent=findViewById(R.id.driverrent);
         foorrent=findViewById(R.id.foodrent);
         totalrent=findViewById(R.id.totalrent);
+
 
         compname.setText(compname1);
         vehicle.setText(vehiclename1);

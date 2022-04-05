@@ -81,7 +81,7 @@ public class SignInPage extends AppCompatActivity {
                             id=  cursor.getString(0);
                             Intent intent = new Intent(SignInPage.this, UserHomePage.class);
                             intent.putExtra("check",check);
-                            intent.putExtra("pId", id);
+                            intent.putExtra("Serviceseekerid", id);
 
                             startActivity(intent);
                         }  while (cursor.moveToNext());

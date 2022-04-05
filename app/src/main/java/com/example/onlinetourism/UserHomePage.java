@@ -43,6 +43,7 @@ public class UserHomePage extends AppCompatActivity {
     private ProgressDialog progressDialog;
     TextView tv;
     Button nearest;
+    String serviceseekerid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,8 @@ public class UserHomePage extends AppCompatActivity {
         dbh = new DatabaseHelper(this);
         Intent inten = getIntent();
         languages= inten.getExtras().getString("language");
+        serviceseekerid= inten.getExtras().getString("Serviceseekerid");
+
         img=findViewById(R.id.search);
         db = dbh.getReadableDatabase();
         tv = (TextView) findViewById(R.id.txt);
@@ -150,6 +153,8 @@ public class UserHomePage extends AppCompatActivity {
                     intent.putExtra("compname", compname);
                     intent.putExtra("vehiclename", vehiclename);
                     intent.putExtra("placename", placename);
+                    intent.putExtra("Serviceseekerid",serviceseekerid);
+
                     startActivity(intent);
                    // Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                 }
