@@ -7,6 +7,16 @@ public class List1 {
     String place;
     String id;
 
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    String contact;
+
     public String getServiceseekerid() {
         return serviceseekerid;
     }
@@ -42,6 +52,11 @@ public class List1 {
     }
     public List1(String serviceseekerid) {
         this.serviceseekerid = serviceseekerid;
+
+    }
+    public List1(String name, String contact) {
+        this.name = name;
+        this.contact= contact;
 
     }
     public String getName() {
