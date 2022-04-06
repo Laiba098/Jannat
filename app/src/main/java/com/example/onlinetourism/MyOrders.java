@@ -83,11 +83,11 @@ public class MyOrders extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                         Intent intent = new Intent(MyOrders.this, CustomerInformation.class);
-                        intent.putExtra("compname", compname);
-                        intent.putExtra("vehiclename", vehiclename);
-                        intent.putExtra("placename", placename);
-                        intent.putExtra("Serviceseekerid",serviceseekerid);
-
+                        intent.putExtra("bookingid", bookingid);
+                        intent.putExtra("customername", s4);
+                        intent.putExtra("customerlocation", s5);
+                        intent.putExtra("customercontact",s6);
+                        intent.putExtra("customeremail",s7);
                         startActivity(intent);
                         // Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                     }
