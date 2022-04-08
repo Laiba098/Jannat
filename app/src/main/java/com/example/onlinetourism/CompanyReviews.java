@@ -53,7 +53,7 @@ public class CompanyReviews extends AppCompatActivity {
             {
                 str=String.valueOf(cr.getLong(0));
                 String[] column = {DatabaseContract.ServiceSeeker.COL_NAME};
-                Cursor crc = db.query(DatabaseContract.ServiceSeeker.TABLE_NAME, column, DatabaseContract.ServiceSeeker._ID + "=?", new String[]{str}, null, null, null, null);
+                Cursor crc = db.query(DatabaseContract.ServiceSeeker.TABLE_NAME, column, DatabaseContract.ServiceSeeker.COL_ID + "=?", new String[]{str}, null, null, null, null);
                 if (crc.getCount() == 0) {
                     str1 = "first one";
                 } else {

@@ -150,6 +150,9 @@ public class CompanyInformation extends AppCompatActivity {
                 break;
 
             case R.id.checkreview:
+                Intent intent3=new Intent(CompanyInformation.this,CompanyReviews.class);
+                intent3.putExtra("serviceproviderid",companyid);
+                startActivity(intent3);
                 break;
 
             case R.id.giveplacereview:

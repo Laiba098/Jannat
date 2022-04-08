@@ -103,7 +103,7 @@ public class GiveCompanyReview extends AppCompatActivity {
             values.put(DatabaseContract.CompanyReviews.COL_REVIEW, str);
             long newRowId = db.insert(DatabaseContract.CompanyReviews.TABLE_NAME, null, values);
             if (newRowId > 0) {
-                Toast.makeText(getApplicationContext(), "New Record Inserted: " + newRowId, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Review has been taken", Toast.LENGTH_LONG).show();
             }
             db.close();
 
