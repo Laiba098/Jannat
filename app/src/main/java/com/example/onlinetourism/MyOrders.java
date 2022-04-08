@@ -41,6 +41,9 @@ public class MyOrders extends AppCompatActivity {
 
         String[] colms = {DatabaseContract.Bookings.COL_COMPANYID, DatabaseContract.Bookings.COL_SERVICESEEEKERID, DatabaseContract.Bookings.COL_PLACE,  DatabaseContract.Bookings.COL_ID};
         Cursor cc = db.query("Bookings", colms, "CompanyId=?", new String[]{serviceproviderid}, null, null, null);
+        if (cc.getCount()==0) {
+            Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+        }
         if (cc.getCount() > 0) {
 
             // Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
@@ -58,6 +61,9 @@ public class MyOrders extends AppCompatActivity {
                 // Toast.makeText(MyOrders.this, "serviceseeker id is" + s2, Toast.LENGTH_SHORT).show();
                 String[] colms1 = {DatabaseContract.ServiceSeeker.COL_NAME, DatabaseContract.ServiceSeeker.COL_LOCATION, DatabaseContract.ServiceSeeker.COL_CONTACT, DatabaseContract.ServiceSeeker.COL_EMAIL};
                 Cursor cc1 = db.query("ServiceSeeker", colms1, "ID=?", new String[]{s2}, null, null, null);
+                if (cc1.getCount()==0) {
+                    Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+                }
                 if (cc1.getCount() > 0) {
 
                     // Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();

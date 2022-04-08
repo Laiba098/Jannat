@@ -24,10 +24,6 @@ public class GiveCompanyReview extends AppCompatActivity {
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
     Activity activity;
-    Context context;
-    Resources resources;
-    String languages;
-    String lang;
     ArrayList<ReviewList> rev=new ArrayList<ReviewList>();
     String str,str1,str2;
 
@@ -58,7 +54,7 @@ public class GiveCompanyReview extends AppCompatActivity {
                 str=cr.getString(0);
                 ReviewList mObj = new ReviewList(str);
                 rev.add(mObj);
-            }
+           }
             reviewHolder rList = new reviewHolder(activity, rev);
 
 
@@ -102,16 +98,16 @@ public class GiveCompanyReview extends AppCompatActivity {
                 }
             });
             ContentValues values = new ContentValues();
-            values.put(DatabaseContract.Review.COL_PLACED_BY, str2);
-            values.put(DatabaseContract.Review.COL_PLACED_TO, str1);
-            values.put(DatabaseContract.Review.COL_REVIEW, str);
-            long newRowId = db.insert(DatabaseContract.Review.TABLE_NAME, null, values);
+            values.put(DatabaseContract.CompanyReviews.COL_PLACED_BY, str2);
+            values.put(DatabaseContract.CompanyReviews.COL_PLACED_TO, str1);
+            values.put(DatabaseContract.CompanyReviews.COL_REVIEW, str);
+            long newRowId = db.insert(DatabaseContract.CompanyReviews.TABLE_NAME, null, values);
             if (newRowId > 0) {
                 Toast.makeText(getApplicationContext(), "New Record Inserted: " + newRowId, Toast.LENGTH_LONG).show();
             }
             db.close();
 
-            et.setText(" ");
+            et.setHint("Type Your Review Here");
         }
     }
 }

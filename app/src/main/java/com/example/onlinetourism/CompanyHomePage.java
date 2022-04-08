@@ -138,6 +138,7 @@ Button btn;
 
             case R.id.myreviews:
                 Intent in1 = new Intent(getApplicationContext(), CompanyReviews.class);
+                in1.putExtra("serviceproviderid",pid);
                 startActivity(in1);break;
 
             case R.id.chat:
