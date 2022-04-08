@@ -51,5 +51,19 @@ public class DatabaseContract {
         public static final String COL_DRIVERRENT="DriverRent";
         public static final String COL_FOODRENT="FoodRent";
     }
+    public static abstract class CompanyReviews implements BaseColumns {
+        public static final String TABLE_NAME = "CompanyReviews";
+        public static final String COL_PLACED_BY = "PlacedBy";
+        public static final String COL_PLACED_TO = "PlacedTo";
+        public static final String COL_REVIEW = "Reviews";
+    }
+
+    public static abstract class PlaceReview implements BaseColumns {
+        public static final String TABLE_NAME = "PlaceReviews";
+        public static final String COL_PLACED_BY = "PlacedBy";
+        public static final String COL_PLACED_TO = "PlacedTo";
+        public static final String COL_REVIEW = "Reviews";
+    }
+
 
 }

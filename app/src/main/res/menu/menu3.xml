@@ -15,7 +15,7 @@
         />
     <item
         android:id="@+id/checkreview"
-        android:title="Check Reviews"
+        android:title="Check Company Reviews"
         />
     <item
         android:id="@+id/giveplacereview"

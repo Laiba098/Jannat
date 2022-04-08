@@ -3,6 +3,7 @@ package com.example.onlinetourism;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
@@ -52,6 +53,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + DatabaseContract.Bookings.COL_DRIVERRENT + " TEXT,"
             + DatabaseContract.Bookings.COL_FOODRENT+ " TEXT )";
 
+    private static final String CREATE_TBL_COMAPNYREVIEWS = "CREATE TABLE "
+            + DatabaseContract.CompanyReviews.TABLE_NAME + " ("
+            +DatabaseContract.CompanyReviews._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + DatabaseContract.CompanyReviews.COL_PLACED_BY + " INTEGER NOT NULL, "
+            + DatabaseContract.CompanyReviews.COL_PLACED_TO + " INTEGER NOT NULL, "
+            + DatabaseContract.CompanyReviews.COL_REVIEW+ " TEXT)";
+
+
+
+    private static final String CREATE_TBL_PLACEREVIEWS = "CREATE TABLE "
+            + DatabaseContract.PlaceReview.TABLE_NAME + " ("
+            +DatabaseContract.PlaceReview._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + DatabaseContract.PlaceReview.COL_PLACED_BY + " INTEGER NOT NULL, "
+            + DatabaseContract.PlaceReview.COL_PLACED_TO + " INTEGER NOT NULL, "
+            + DatabaseContract.PlaceReview.COL_REVIEW+ " TEXT)";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -60,6 +77,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TBL_SERVICESEEKER);
         db.execSQL(CREATE_TBL_TOURPLANS);
         db.execSQL(CREATE_TBL_BOOKINGS);
+        db.execSQL(CREATE_TBL_COMAPNYREVIEWS);
+        db.execSQL(CREATE_TBL_PLACEREVIEWS);
 
     }
 

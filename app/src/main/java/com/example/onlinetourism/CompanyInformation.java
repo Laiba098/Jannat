@@ -153,9 +153,18 @@ public class CompanyInformation extends AppCompatActivity {
                 break;
 
             case R.id.giveplacereview:
+                Intent intent1=new Intent(CompanyInformation.this,GivePlaceReview.class);
+                intent1.putExtra("companyid",companyid);
+                intent1.putExtra("serviceseekerid",serviceseekerid);
+                intent1.putExtra("place",placename1);
+                startActivity(intent1);
                 break;
 
             case R.id.givecompreview:
+                Intent intent2=new Intent(CompanyInformation.this,GiveCompanyReview.class);
+                intent2.putExtra("companyid",companyid);
+                intent2.putExtra("serviceseekerid",serviceseekerid);
+                startActivity(intent2);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
