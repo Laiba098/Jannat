@@ -44,9 +44,8 @@ public class MyOrders extends AppCompatActivity {
         if (cc.getCount()==0) {
             Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
         }
-        if (cc.getCount() > 0) {
+        else {
 
-            // Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
 
 
             while (cc.moveToNext()) {
@@ -64,7 +63,7 @@ public class MyOrders extends AppCompatActivity {
                 if (cc1.getCount()==0) {
                     Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
                 }
-                if (cc1.getCount() > 0) {
+                else  {
 
                     // Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
 
