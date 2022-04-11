@@ -55,13 +55,14 @@ public class PlaceReviews extends AppCompatActivity {
         db = dbh.getReadableDatabase();
         tv = (TextView) findViewById(R.id.txt);
         edt=(EditText) findViewById(R.id.searchbar);
+
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // db = dbh.getReadableDatabase();
                 //  Toast.makeText(UserHomePage.this, "message: "+edt.getText().toString(), Toast.LENGTH_LONG).show();
                 if (!edt.getText().toString().equals(" ")) {
-                    String strs = edt.getText().toString();
+                    String strs = "Place: "+edt.getText().toString();
                     String[] colm = {DatabaseContract.PlaceReview.COL_PLACED_BY,DatabaseContract.PlaceReview.COL_PLACE, DatabaseContract.PlaceReview.COL_REVIEW};
                     Cursor c = db.query(DatabaseContract.PlaceReview.TABLE_NAME, colm, DatabaseContract.PlaceReview.COL_PLACE+"=?", new String[] { strs}
                             , null, null, null, null);
@@ -70,10 +71,21 @@ public class PlaceReviews extends AppCompatActivity {
                         while (c.moveToNext()) {
 
                             s1 = c.getString(0);
+
+                            String[] colm2 = {DatabaseContract.ServiceSeeker.COL_ID,DatabaseContract.ServiceSeeker.COL_NAME};
+                            Cursor c2 = db.query(DatabaseContract.ServiceSeeker.TABLE_NAME, colm2, DatabaseContract.ServiceSeeker.COL_ID+"=?", new String[] {s1}
+                                    , null, null, null, null);
+                            if (c2.getCount() > 0) {
+                                while (c2.moveToNext()) {
+
+                                    s1 = c2.getString(1);
+                                }
+                            }
+
                             s2 = c.getString(1);
                             s4 = c.getString(2);
                             // Toast.makeText(UserHomePage.this, "message222: " + edt.getText().toString(), Toast.LENGTH_LONG).show();
-                            List3 mObj = new List3(s1,s2,s4);
+                            List3 mObj = new List3(s1,s2,"Comment: "+s4);
                             arrayList.add(mObj);
 
 
@@ -122,10 +134,20 @@ public class PlaceReviews extends AppCompatActivity {
             while (c.moveToNext()) {
 
                 s1 = c.getString(0);
+                String[] colm2 = {DatabaseContract.ServiceSeeker.COL_ID,DatabaseContract.ServiceSeeker.COL_NAME};
+                Cursor c2 = db.query(DatabaseContract.ServiceSeeker.TABLE_NAME, colm2, DatabaseContract.ServiceSeeker.COL_ID+"=?", new String[] {s1}
+                        , null, null, null, null);
+                if (c2.getCount() > 0) {
+                    while (c2.moveToNext()) {
+
+                        s1 = c2.getString(1);
+                    }
+                }
                 s2 = c.getString(1);
                 s4 = c.getString(2);
                 // Toast.makeText(UserHomePage.this, "message222: " + edt.getText().toString(), Toast.LENGTH_LONG).show();
-                List3 mObj = new List3(s1,s2,s4);
+              // Toast.makeText(PlaceReviews.this, "Review: "+s4, Toast.LENGTH_SHORT).show();
+                List3 mObj = new List3(s1,s2,"Comment: "+s4);
                 arrayList.add(mObj);
 
 

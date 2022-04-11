@@ -58,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +DatabaseContract.CompanyReviews._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + DatabaseContract.CompanyReviews.COL_PLACED_BY + " INTEGER NOT NULL, "
             + DatabaseContract.CompanyReviews.COL_PLACED_TO + " INTEGER NOT NULL, "
-            + DatabaseContract.CompanyReviews.COL_REVIEW+ " TEXT)";
+            + DatabaseContract.CompanyReviews.COL_REVIEW+ " TEXT )";
 
 
 
@@ -67,7 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             +DatabaseContract.PlaceReview._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + DatabaseContract.PlaceReview.COL_PLACED_BY + " TEXT,"
             + DatabaseContract.PlaceReview.COL_PLACE + " TEXT,"
-            + DatabaseContract.PlaceReview.COL_REVIEW+ " TEXT)";
+            + DatabaseContract.PlaceReview.COL_REVIEW+ " TEXT )";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

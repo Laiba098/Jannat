@@ -31,15 +31,17 @@ EditText place,review;
         place=findViewById(R.id.place);
         review=findViewById(R.id.review);
         place.setText(str3);
-        review1=review.getText().toString();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ContentValues values = new ContentValues();
                 db = dbHelper.getWritableDatabase();
+                review1=review.getText().toString();
                 values.put(DatabaseContract.PlaceReview.COL_PLACED_BY, str2);
                 values.put(DatabaseContract.PlaceReview.COL_PLACE, str3);
                 values.put(DatabaseContract.PlaceReview.COL_REVIEW, review1);
+               // Toast.makeText(getApplicationContext(), "Review "+review1+"is placed", Toast.LENGTH_LONG).show();
+
                 long newRowId = db.insert(DatabaseContract.PlaceReview.TABLE_NAME, null, values);
                 if (newRowId > 0) {
                     Toast.makeText(getApplicationContext(), "Review has been taken for "+str3, Toast.LENGTH_LONG).show();

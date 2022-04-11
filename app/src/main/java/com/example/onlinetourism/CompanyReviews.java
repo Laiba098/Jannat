@@ -63,7 +63,7 @@ public class CompanyReviews extends AppCompatActivity {
                 }
 
                 str2=cr.getString(1);
-                review2 mObj = new review2(str2,str);
+                review2 mObj = new review2("Comment: "+str2,str);
                 rev.add(mObj);
             }
 
