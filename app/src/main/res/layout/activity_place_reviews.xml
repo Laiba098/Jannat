@@ -63,10 +63,11 @@
     </TextView>
 
     <ListView
+
         android:layout_marginLeft="20dp"
         android:layout_marginRight="40dp"
         android:layout_width="330dp"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:divider="@color/white"
         android:dividerHeight="1dp"
         android:id="@+id/list1"
