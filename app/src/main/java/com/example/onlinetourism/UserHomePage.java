@@ -184,7 +184,8 @@ public class UserHomePage extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.checkplacereviews:
                 Intent in = new Intent(getApplicationContext(), PlaceReviews.class);
-                startActivity(in);break;
+                startActivity(in);
+                break;
 
 
             default:

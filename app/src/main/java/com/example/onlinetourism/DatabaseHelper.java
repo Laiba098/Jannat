@@ -65,8 +65,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TBL_PLACEREVIEWS = "CREATE TABLE "
             + DatabaseContract.PlaceReview.TABLE_NAME + " ("
             +DatabaseContract.PlaceReview._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + DatabaseContract.PlaceReview.COL_PLACED_BY + " INTEGER NOT NULL, "
-            + DatabaseContract.PlaceReview.COL_PLACED_TO + " INTEGER NOT NULL, "
+            + DatabaseContract.PlaceReview.COL_PLACED_BY + " TEXT,"
+            + DatabaseContract.PlaceReview.COL_PLACE + " TEXT,"
             + DatabaseContract.PlaceReview.COL_REVIEW+ " TEXT)";
 
     public DatabaseHelper(Context context) {

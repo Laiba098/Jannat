@@ -7,6 +7,40 @@ public class List1 {
     String place;
     String id;
 
+    public String getPlace6() {
+        return place6;
+    }
+
+    public void setPlace6(String place6) {
+        this.place6 = place6;
+    }
+
+    public String getReview6() {
+        return review6;
+    }
+
+    public void setReview6(String review6) {
+        this.review6 = review6;
+    }
+
+    public String getPlaceby6() {
+        return placeby6;
+    }
+
+    public void setPlaceby6(String placeby6) {
+        this.placeby6 = placeby6;
+    }
+
+    public List1(String place6, String review6, String placeby6, String dummy6, String dummy16) {
+        this.place6 = place6;
+        this.review6 = review6;
+        this.placeby6 = placeby6;
+        this.dummy6 = dummy6;
+        this.dummy16 = dummy16;
+    }
+
+    String place6,review6,placeby6,dummy6,dummy16;
+
     public String getContact() {
         return contact;
     }
@@ -59,6 +93,8 @@ public class List1 {
         this.contact= contact;
 
     }
+
+
     public String getName() {
         return name;
     }

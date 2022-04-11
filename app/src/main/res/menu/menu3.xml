@@ -19,7 +19,7 @@
         />
     <item
         android:id="@+id/giveplacereview"
-        android:title="Give Place Reviews"
+        android:title="Give Place Review"
         />
     <item
         android:id="@+id/givecompreview"

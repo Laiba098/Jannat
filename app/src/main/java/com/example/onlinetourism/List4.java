@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class List2 extends BaseAdapter {
+public class List4 extends BaseAdapter {
     private Activity context;
-    ArrayList<List1> customer;
-    public List2()
+    ArrayList<List3> customer;
+    public List4()
     {
 
     }
-    public List2(Activity context, ArrayList cust) {
+    public List4(Activity context, ArrayList cust) {
         // super(context, R.layout.row_item, countries);
         this.context = context;
         this.customer=cust;
@@ -38,7 +38,7 @@ public class List2 extends BaseAdapter {
         CustomerLists.ViewHolder vh;
         if(convertView==null) {
             vh=new CustomerLists.ViewHolder();
-            row = inflater.inflate(R.layout.activity_lists, null, true);
+            row = inflater.inflate(R.layout.activity_lists1, null, true);
             vh.textViewCountry = (TextView) row.findViewById(R.id.textViewCountry);
             vh.textViewCapital = (TextView) row.findViewById(R.id.textViewCapital);
             vh.tv = (TextView) row.findViewById(R.id.ordertxt);
@@ -48,10 +48,10 @@ public class List2 extends BaseAdapter {
         else {
             vh = (CustomerLists.ViewHolder) convertView.getTag();
         }
-        vh.textViewCountry.setText(customer.get(position).getName());
+        vh.textViewCountry.setText(customer.get(position).getPlaceby());
         vh.textViewCapital.setText(customer.get(position).getPlace());
-       // vh.tv.setText(customer.get(position).getName());
-       // Log.d("Tag",customer.get(position).getPlace());
+        vh.tv.setText(customer.get(position).getReview());
+        // Log.d("Tag",customer.get(position).getPlace());
         return  row;
     }
 

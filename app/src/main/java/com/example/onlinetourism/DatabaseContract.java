@@ -61,7 +61,7 @@ public class DatabaseContract {
     public static abstract class PlaceReview implements BaseColumns {
         public static final String TABLE_NAME = "PlaceReviews";
         public static final String COL_PLACED_BY = "PlacedBy";
-        public static final String COL_PLACED_TO = "PlacedTo";
+        public static final String COL_PLACE = "Place";
         public static final String COL_REVIEW = "Reviews";
     }
 
