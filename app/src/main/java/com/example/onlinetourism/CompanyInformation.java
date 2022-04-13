@@ -1,8 +1,5 @@
 package com.example.onlinetourism;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CompanyInformation extends AppCompatActivity {
     String id,compname1,vehiclename1,placename1;
@@ -144,9 +144,13 @@ public class CompanyInformation extends AppCompatActivity {
               break;
 
             case R.id.chat:
-              break;
+
+                break;
 
             case R.id.googlemap:
+                Intent intent6=new Intent(CompanyInformation.this,MapsActivity.class);
+                intent6.putExtra("place",placename1);
+                startActivity(intent6);
                 break;
 
             case R.id.checkreview:
