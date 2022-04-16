@@ -1,64 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chat"
-    android:orientation="vertical"
-    android:background="@color/black">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:background="@drawable/bkg"
-
-        >
-
-        <ListView
-            android:id="@+id/listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-        />
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
+    android:layout_margin="30dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/bkg">
+    <ListView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-        <EditText
-            android:id="@+id/messageBox"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/shape"
-            android:hint="Type Message Here"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:inputType="textPersonName"
-            android:padding="8dp"
-            android:textSize="14sp"
-            android:layout_marginTop="10dp"
+        android:id="@+id/listview"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
 
-            />
+        ></ListView>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/messageBox"
+        android:background="@drawable/shape"
+        android:hint="Type Message Here"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:padding="10dp"
 
-
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/sendbtn"
-            android:id="@+id/sendbtn"
-            android:layout_marginLeft="2dp"
-            android:layout_toRightOf="@+id/messageBox"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            />
-    </RelativeLayout>
-
-
-</LinearLayout>
+        ></EditText>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sendbtn"
+        android:id="@+id/sendbtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        ></ImageButton>
+</RelativeLayout>
