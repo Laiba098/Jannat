@@ -1,7 +1,5 @@
 package com.example.onlinetourism;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,9 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -93,6 +92,7 @@ public class MyOrders extends AppCompatActivity {
                         intent.putExtra("customerlocation", s5);
                         intent.putExtra("customercontact",s6);
                         intent.putExtra("customeremail",s7);
+                        intent.putExtra("serviceproviderid",serviceproviderid);
                         startActivity(intent);
                         // Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                     }

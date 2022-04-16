@@ -1,20 +1,19 @@
 package com.example.onlinetourism;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CompanyHomePage extends AppCompatActivity {
 EditText companyname, vehiclename, numofseats, place,vehiclerent, roomrent, driverrent, foodrent;
@@ -141,9 +140,7 @@ Button btn;
                 in1.putExtra("serviceproviderid",pid);
                 startActivity(in1);break;
 
-            case R.id.chat:
-                Intent in2 = new Intent(getApplicationContext(), PhoneNumber.class);
-                startActivity(in2);break;
+
 
 
             default:

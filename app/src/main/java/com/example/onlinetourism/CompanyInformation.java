@@ -27,7 +27,7 @@ public class CompanyInformation extends AppCompatActivity {
     String vehiclerent1;
     String roomrent1;
     String driverrent1;
-    String foodrent1;
+    String foodrent1,serviceseekername,serviceprovidername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class CompanyInformation extends AppCompatActivity {
 
 
             String[] columns2 = {"CompanyId"};
-            String[] columns1 = {"Contact"};
+            String[] columns1 = {"Contact","Name"};
             Cursor cursor2 = db.query("TourPlans", columns2, "CompanyName=?", new String[]{compname1}, null, null, null);
 
 
@@ -91,7 +91,9 @@ public class CompanyInformation extends AppCompatActivity {
 
 
             while (cursor1.moveToNext()) {
+
                 contactnumb = cursor1.getString(0);
+                serviceprovidername= cursor1.getString(1);
             }
         }
         bookvehicle.setOnClickListener(new View.OnClickListener() {
@@ -144,9 +146,27 @@ public class CompanyInformation extends AppCompatActivity {
               break;
 
             case R.id.chat:
+                Intent intentt=new Intent(CompanyInformation.this,Chat.class);
+               // intentt.putExtra("serviceproviderid",compname1);
 
+                String[] colms1 = {DatabaseContract.ServiceSeeker.COL_NAME};
+                Cursor cc1 = db.query("ServiceSeeker", colms1, "ID=?", new String[]{serviceseekerid}, null, null, null);
+                if (cc1.getCount() > 0) {
+
+                    // Toast.makeText(getApplicationContext(), "No Record exist", Toast.LENGTH_LONG).show();
+
+
+                    while (cc1.moveToNext()) {
+
+                        serviceseekername = cc1.getString(0);
+                    }}
+               // intentt.putExtra("serviceseekerid",serviceseekerid);
+                intentt.putExtra("serviceseekername",serviceseekername);
+                intentt.putExtra("serviceprovidername",serviceprovidername);
+               // String tablename= serviceseekername+serviceprovidername;
+               // Toast.makeText(CompanyInformation.this, "Table Name: "+tablename, Toast.LENGTH_SHORT).show();
+                startActivity(intentt);
                 break;
-
             case R.id.googlemap:
                 Intent intent6=new Intent(CompanyInformation.this,MapsActivity.class);
                 intent6.putExtra("place",placename1);

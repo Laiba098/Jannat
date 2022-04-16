@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTourism">
         <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
             android:name=".CustomerInformation"
             android:exported="false" />
         <activity
