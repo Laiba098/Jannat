@@ -65,5 +65,12 @@ public class DatabaseContract {
         public static final String COL_REVIEW = "Reviews";
     }
 
+   /* public static abstract class Chat implements BaseColumns {
+        public static final String TABLE_NAME = "Chat";
+        public static final String COL_SENDERNAME = "SenderName";
+        public static final String COL_MESSAGE = "Message";
+
+    }*/
+
 
 }
