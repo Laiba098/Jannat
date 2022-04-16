@@ -163,6 +163,7 @@ public class CompanyInformation extends AppCompatActivity {
                // intentt.putExtra("serviceseekerid",serviceseekerid);
                 intentt.putExtra("serviceseekername",serviceseekername);
                 intentt.putExtra("serviceprovidername",serviceprovidername);
+                intentt.putExtra("using",serviceseekername);
                // String tablename= serviceseekername+serviceprovidername;
                // Toast.makeText(CompanyInformation.this, "Table Name: "+tablename, Toast.LENGTH_SHORT).show();
                 startActivity(intentt);

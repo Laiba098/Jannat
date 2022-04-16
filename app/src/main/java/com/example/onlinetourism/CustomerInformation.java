@@ -128,6 +128,7 @@ TextView custname,custlocation,custemail,custcontact,bookedplace, bookedvehicle,
                // String tablename=serviceprovidername+custname1;
                 intentt.putExtra("serviceseekername",custname1);
                 intentt.putExtra("serviceprovidername",serviceprovidername);
+                intentt.putExtra("using",serviceprovidername);
                 // String tablename= serviceseekername+serviceprovidername;
                 // Toast.makeText(CompanyInformation.this, "Table Name: "+tablename, Toast.LENGTH_SHORT).show();
                 startActivity(intentt);
