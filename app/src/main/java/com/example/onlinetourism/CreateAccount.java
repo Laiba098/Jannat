@@ -1,7 +1,5 @@
 package com.example.onlinetourism;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Pattern;
 
@@ -152,7 +152,7 @@ public class CreateAccount extends AppCompatActivity {
                     //  intent.putExtra("val1", Email);
                     intent.putExtra("check", check);
                     startActivity(intent);
-
+                    finish();
 
                 }
             }
@@ -207,6 +207,7 @@ public class CreateAccount extends AppCompatActivity {
                     Intent intent = new Intent(CreateAccount.this, SignInPage.class);
                     intent.putExtra("check", check);
                     startActivity(intent);
+                    finish();
 
                 }
             }

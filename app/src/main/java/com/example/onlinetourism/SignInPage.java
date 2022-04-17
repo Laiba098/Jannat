@@ -1,7 +1,5 @@
 package com.example.onlinetourism;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -13,6 +11,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignInPage extends AppCompatActivity {
 
@@ -49,6 +49,7 @@ public class SignInPage extends AppCompatActivity {
                 Intent intent1=new Intent(SignInPage.this,CreateAccount.class);
                 intent1.putExtra("check",check);
                 startActivity(intent1);
+                finish();
             }
         });
     }
@@ -84,6 +85,7 @@ public class SignInPage extends AppCompatActivity {
                             intent.putExtra("Serviceseekerid", id);
 
                             startActivity(intent);
+                            finish();
                         }  while (cursor.moveToNext());
 
                     }
@@ -108,6 +110,7 @@ public class SignInPage extends AppCompatActivity {
                             intent.putExtra("check",check);
                             intent.putExtra("pId", id);
                             startActivity(intent);
+                            finish();
                         }  while (cursor.moveToNext());
 
                     } else {
