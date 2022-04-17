@@ -44,6 +44,16 @@ public class Chat extends AppCompatActivity {
         tablecompcust=serviceprovidername+serviceseekername;
         tablecustcom=serviceseekername+serviceprovidername;
 
+        Boolean res=isTableExists(db,tablecompcust);
+        Boolean res1=isTableExists1(db,tablecustcom);
+        if (res==false || res1==false) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS " + tablecompcust
+                    + " (Sendername VARCHAR, Message VARCHAR);");
+            db.execSQL("CREATE TABLE IF NOT EXISTS " + tablecustcom
+                    + " (Sendername VARCHAR, Message VARCHAR);");
+        }
+
+
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         activity = this;

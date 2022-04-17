@@ -33,15 +33,15 @@ public class MyOrders extends AppCompatActivity {
         activity = this;
         dbh = new DatabaseHelper(this);
         db = dbh.getReadableDatabase();
-        List2 customList = new List2(activity, arrayList);
-        lv.setAdapter(customList);
+        //List2 customList = new List2(activity, arrayList);
+        //lv.setAdapter(customList);
 
         //move activity
 
         String[] colms = {DatabaseContract.Bookings.COL_COMPANYID, DatabaseContract.Bookings.COL_SERVICESEEEKERID, DatabaseContract.Bookings.COL_PLACE,  DatabaseContract.Bookings.COL_ID};
         Cursor cc = db.query("Bookings", colms, "CompanyId=?", new String[]{serviceproviderid}, null, null, null);
         if (cc.getCount()==0) {
-            Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+            Toast.makeText(MyOrders.this,"You have'nt get any order yet",Toast.LENGTH_LONG).show();
         }
         else {
 
