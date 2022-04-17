@@ -1,5 +1,6 @@
 package com.example.onlinetourism;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -7,8 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class Chat extends AppCompatActivity {
     String serviceseekername, serviceprovidername,msg,usingperson;
@@ -18,6 +22,9 @@ public class Chat extends AppCompatActivity {
     EditText messagebox;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+    Activity activity;
+    String s1,s2;
+    ArrayList<review2> rev=new ArrayList<review2>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,31 @@ public class Chat extends AppCompatActivity {
         tablecompcust=serviceprovidername+serviceseekername;
         tablecustcom=serviceseekername+serviceprovidername;
 
+        dbHelper = new DatabaseHelper(this);
+        db = dbHelper.getReadableDatabase();
+        activity = this;
+
+            String[] colm={"Sendername","message"};
+            Cursor cr=db.query(tablecompcust,colm,null,
+                     null, null, null, null);
+            if (cr.getCount()==0) {
+              //  Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+            }
+            else {
+                //rev.clear();
+                while (cr.moveToNext()) {
+                    s1 = cr.getString(0);
+                    s2 = cr.getString(1);
+                    review2 mObj = new review2("Message: " + s2, s1);
+                    rev.add(mObj);
+                }
+                review2Holder rList = new review2Holder(activity, rev);
+
+
+                listView.setAdapter(rList);
+            }
+
+
 
 
         //Toast.makeText(Chat.this, "Tables are:" +tablecustcom+tablecompcust, Toast.LENGTH_SHORT).show();
@@ -54,6 +86,28 @@ public class Chat extends AppCompatActivity {
                             + " Values ('" + usingperson + "', '" + msg + "');");
                     db.execSQL("INSERT INTO " + tablecustcom +" (Sendername, message) "
                             + " Values ('" + usingperson + "', '" + msg + "');");
+
+                    String[] colm={"Sendername","message"};
+                    Cursor cr=db.query(tablecompcust,colm,null,
+                            null, null, null, null);
+                    if (cr.getCount()==0) {
+                        Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        //rev.clear();
+                        cr.moveToPosition(cr.getCount() - 1);
+                            s1 = cr.getString(0);
+                            s2 = cr.getString(1);
+                            review2 mObj = new review2("Message: " + s2, s1);
+                            rev.add(mObj);
+                        review2Holder rList = new review2Holder(activity, rev);
+
+
+                        listView.setAdapter(rList);
+                        messagebox.setText(null);
+                    }
+
+
                 }
                 else
                 {
@@ -68,6 +122,26 @@ public class Chat extends AppCompatActivity {
                             + " Values ('" + usingperson + "', '" + msg + "');");
 
 
+                    String[] colm={"Sendername","message"};
+                    Cursor cr=db.query(tablecompcust,colm,null,
+                            null, null, null, null);
+                    if (cr.getCount()==0) {
+                        //Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        //rev.clear();
+                        cr.moveToPosition(cr.getCount() - 1);
+                            s1 = cr.getString(0);
+                            s2 = cr.getString(1);
+                            review2 mObj = new review2("Message: " + s2, s1);
+                            rev.add(mObj);
+
+                        review2Holder rList = new review2Holder(activity, rev);
+
+
+                        listView.setAdapter(rList);
+                        messagebox.setText(null);
+                    }
 
 
 
