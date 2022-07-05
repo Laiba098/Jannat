@@ -133,15 +133,14 @@ Button btn;
             case R.id.checkorders:
                 Intent in = new Intent(getApplicationContext(), MyOrders.class);
                 in.putExtra("serviceproviderid",pid);
-                startActivity(in);break;
+                startActivity(in);
+                break;
 
             case R.id.myreviews:
                 Intent in1 = new Intent(getApplicationContext(), CompanyReviews.class);
                 in1.putExtra("serviceproviderid",pid);
-                startActivity(in1);break;
-
-
-
+                startActivity(in1);
+                break;
 
             default:
                 return super.onOptionsItemSelected(item);

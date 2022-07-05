@@ -1,8 +1,5 @@
 package com.example.onlinetourism;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -14,7 +11,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +18,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -91,20 +90,8 @@ public class UserHomePage extends AppCompatActivity {
 
                         lv.setAdapter(customList);
 
-                      /*  lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                                String ss = arrayList.get(position).getOrderNo();
-                                Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
-                                intent.putExtra("val", ss);
-                                intent.putExtra("val2", str);
-                                intent.putExtra("language", lang);
-                                startActivity(intent);
-                                Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
-                            }
-                        });*/
-
-                    }else {
+                    }
+                    else {
 
                         Toast.makeText(UserHomePage.this, "No Tour Team Found", Toast.LENGTH_LONG).show();
                     }
